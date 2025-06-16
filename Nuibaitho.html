@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lien he </title>
+    <style>
+        
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #e3f9ff;
+        }
+        .banner-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .phan-gioi-thieu {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.container-gioi-thieu {
+    width: 80%;
+}
+
+.noi-dung-gioi-thieu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Mặc định xếp dọc trên mobile */
+}
+
+/* Khi màn hình lớn hơn 768px thì xếp ngang */
+@media (min-width: 768px) {
+    .noi-dung-gioi-thieu {
+        flex-direction: row;
+    }
+}
+        .welcome-containerrr {
+            background-color: white;
+            color: black;
+            overflow: hidden; /* Ẩn phần chữ chạy ra ngoài */
+            padding: 20px 0; /* Giảm padding dọc */
+        }
+        .welcome-texttt {
+            white-space: nowrap; /* Ngăn chữ xuống dòng */
+            font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+            font-weight: 500;
+            padding-left: 0%; /* Đẩy chữ ra ngoài bên phải ban đầu */
+            animation: marquee 12s linear infinite; /* Tạo hiệu ứng chạy */
+            letter-spacing: 20px;/*chạy chữ */
+           font-family: initial;
+        }
+        .welcome-text {
+            width: fit-content;
+            margin: auto;
+            background-image:linear-gradient(lightblue,green );
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #166534;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho văn bản chào mừng */
+            background: linear-gradient(135deg, #b6f4d3 16% 0%, #5186f0 33%, #b6f4d3 66%, #0a0af4 100%);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:black;
+            max-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            border: 1px ;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 20px 26px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            margin-top: 20px;
+        }
+        .dropdown-content a:hover {
+            background: white;
+            color: rgb(232, 63, 63);
+            border-bottom: 2px solid black;
+        }
+        .dropdown:hover .dropdown-content {display: block;}
+        .navbar-blue {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           
+        }
+        .navbar-blue a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-blue a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .hidden-md-flex-items-center-space-x-8 a:hover{
+            color: lightblue
+        }
+        .noidung{
+            padding-left: 70px;
+            padding-right: 70px;
+           padding-bottom: 50px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Giới hạn kích thước */
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;  /* Tăng chiều rộng */
+            height: 500px; /* Tăng chiều cao */
+            object-fit: cover; /* Giữ tỷ lệ, tránh méo ảnh */
+            display: block;
+            border-radius: 10px; /* Bo góc ảnh */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 0, 0, 0.5); /* Làm tối ảnh */
+            border-radius: 10px;
+        }
+
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+    
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        .offer {
+            background-color: #ff5c5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .contact {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #14a2e8;
+            border: 1px solid #bce8f1;
+            border-radius: 5px;
+        }
+        .contact input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 20px);
+        }
+        .sss{
+            background-color: #14a2e8;
+            padding-top: 10px;
+            padding-left: 50px;
+            height:  200px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <body class="bg-gray-50">
+            <nav class="navbar-blue">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <span class="text-xl font-bold"><img  width="300" align="center" src="logo7.jpg">  </span>
+                </div>
+            </nav>
+            <section class="welcome-containerrr">
+                <p class="welcome-texttt">CHÀO MỪNG ĐẾN VỚI DI SẢN THIÊN NHIÊN THẾ GIỚI</p>
+            </section>
+    </header>
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 1px solid green;">
+            <p>Núi Bài Thơ</p>
+        </div>
+    </div>
+        <div style="padding-left:40px ;line-height: 1.75;padding-right: 50px;"align="left" >
+            <p >Núi Bài Thơ là danh thắng nổi tiếng tọa lạc tại trung tâm thành phố Hạ Long, là một trong những ngọn núi cao và đẹp nhất tỉnh Quảng Ninh. Núi sở hữu độ cao 200m so với mặt nước biển, núi có 1 phần nằm trên cạn, phần còn lại nằm trên biển.</p>
+            <div align="center">
+                <img  width="800px"height=500px src="BT1.png"alt="Ảnh nhỏ 1" class="side-image">
+        
+        </div>
+    </div>
+    </div>
+    <div >
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Thời điểm thích hợp để vui chơi.</p>
+        </div> 
+        
+    </div><div align="center">
+            <img  width="800px"height=500px src="BT3.jpg"alt="Ảnh nhỏ 1" class="side-image">
+    
+    </div>
+        <div  style="padding-left: 50px;line-height: 1.75;padding-right: 50px;"align="left"pa>
+            <p>Thời gian leo núi Bài Thơ thuận lợi nhất sẽ là từ tháng 4 đến tháng 11 mỗi năm, do lúc này là mùa hè, trời trong xanh, nắng đẹp và không có mưa nên rất tiện để leo núi.
+            
+        </div>
+   </div>
+   </div>
+   <div style="padding-top: 40px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Hoạt động thăm quan</p>
+        </div> </div>
+        <div align="left"style="padding-left: 50px;line-height: 1.75;padding-right: 50px;">
+            <p>Đường lên núi Bài Thơ tuy không dài nhưng khá dốc, thích hợp cho những ai yêu thích trải nghiệm leo núi nhẹ nhàng. Khi đã hoàn thành quá trình chinh phục núi Bài Thơ, bạn sẽ lập tức được chiêu đãi bằng một khung cảnh cực kỳ tuyệt đẹp xuống vịnh Hạ Long. </p>
+        </div>
+        <div align="center">
+            <img  width="800px"height=500px src="BT4.jpg"alt="Ảnh nhỏ 1" class="side-image">
+    
+    </div>
+    </div>
+   <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Chiêm ngưỡng vẻ đẹp của Núi Bài Thơ </p>
+        </div> </div>
+        <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+            <p>Với xa xa là những ngọn núi nhỏ nhấp nhô giữa biển, những du thuyền thay nhau di chuyển ngược xuôi và làn nước trong xanh phản chiếu hình ảnh mây trời. Đỉnh núi Bài Thơ chắc chắn là vị trí ‘có 1 không 2’ để ngắm nhìn toàn cảnh Hạ Long mà bạn sẽ không tìm thấy ở bất kỳ đâu. Ngoài khung cảnh vịnh Hạ Long tuyệt đẹp, bạn sẽ còn được tận mắt ngắm nhìn Là cờ đỏ sao vàng tung bay trên đỉnh núi Bài Thơ. Lá cờ đỏ sao vàng được đặt tại vị trí lịch sử này từ những năm kháng chiến chống thực dân Pháp, trong thời kỳ đấu tranh kháng chiến chống giặc ngoại xâm của đất nước. Bên cạnh đó, núi Bài Thơ còn là địa điểm ngắm bình minh và hoàng hôn siêu đẹp thu hút rất nhiều du khách khi tới Hạ Long nữa đó nha.
+                </p>
+                <div align="center">
+                <img  width="800px"height=500px src="BT2.png"><br></div>
+                <div align="left" style="padding-left: 30px;line-height: 1.75;padding-right: 50px;">
+                    <p>Theo lịch sử, ngày xưa núi Bài Thơ còn được gọi là núi Truyền Đăng hay núi Tròn, lý do là vào thời giặc giã loạn lạc, nơi đây chính là vị trí chiến lược giúp quân ta theo dõi của quân giặc và kịp thời báo về kinh thành. Tên Bài Thơ hiện nay là do xuất phát từ 9 bài thơ được khắc trên núi, trong số đó có nhiều bài thơ chữ Hán do vua Lê Thánh Tông sáng tác từ năm 1468 và Trịnh Tiết Cương viết vào năm 1729.</p></div>
+         </div> 
+         </div>  
+        </div>
+        
+</body>
+</html>

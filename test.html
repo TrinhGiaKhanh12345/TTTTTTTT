@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            
+        }
+        .banner-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .phan-gioi-thieu {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.container-gioi-thieu {
+    width: 80%;
+}
+
+.noi-dung-gioi-thieu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Mặc định xếp dọc trên mobile */
+}
+
+/* Khi màn hình lớn hơn 768px thì xếp ngang */
+@media (min-width: 768px) {
+    .noi-dung-gioi-thieu {
+        flex-direction: row;
+    }
+}
+
+.image-group {
+  display: flex;
+  justify-content: center; /* Căn giữa nhóm ảnh */
+  gap: 10px; /* Khoảng cách giữa các phần tử con */
+  width: 90%; /* Điều chỉnh độ rộng vùng chứa */
+  margin: 0 auto 10px; /* Căn giữa vùng chứa */
+  flex-wrap: wrap; /* Cho phép xuống dòng khi không đủ không gian */
+}
+
+.main-image {
+  width: 60%; /* Ảnh chính lớn hơn */
+  height: auto;
+  border-radius: 10px;
+}
+
+.side-images-container {
+  display: flex;
+  flex-direction: column; /* Xếp chồng hai ảnh nhỏ */
+  gap: 10px; /* Khoảng cách giữa hai ảnh nhỏ */
+  width: calc(40% - 10px); /* Chiếm phần không gian còn lại */
+}
+
+.side-image {
+  width: 100%; /* Ảnh nhỏ chiếm toàn bộ chiều rộng container */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Loại bỏ стили mặc định cho các ảnh con trực tiếp của .image-group */
+.image-group > img {
+  width: auto;
+}
+
+/* Khi màn hình nhỏ, ảnh sẽ xếp dọc */
+@media (max-width: 768px) {
+    .image-group {
+        width: 100%;
+        justify-content: center;
+    }
+    .image-group img {
+        width: 100%; /* Ảnh full chiều ngang */
+    }
+}
+
+.van-ban-gioi-thieu {
+    width: 50%;
+}
+
+.tieu-de-gioi-thieu {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.mo-ta-gioi-thieu {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.nut-gioi-thieu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nut-chinh, .nut-phu {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.nut-chinh {
+    background-color: #991b1b;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.nut-chinh:hover {
+    background-color: #7f1d1d;
+}
+
+.nut-phu {
+    border: 1px solid #d1d5db;
+    color: #374151;
+    background: none;
+    transition: background-color 0.3s ease;
+}
+
+.nut-phu:hover {
+    background-color: #f3f4f6;
+}
+
+/* Responsive: Khi màn hình nhỏ, căn giữa text + nút */
+@media (max-width: 768px) {
+    .van-ban-gioi-thieu {
+        width: 100%;
+        text-align: center;
+    }
+    .nut-gioi-thieu {
+        justify-content: center;
+    }
+}
+        .text-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .text-content h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .text-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 15px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #d9534f;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c9302c;
+        }
+
+        .btn-secondary {
+            background: #ccc;
+            color: black;
+        }
+
+        .btn-secondary:hover {
+            background: #bbb;
+        }
+
+        /* Phần hình ảnh */
+        .image-group {
+            position: relative;
+            display: flex;
+            gap: 100px;
+        }
+
+        .image-group img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition:  0.3s;
+            margin-bottom: 10px;
+            gap: 100px;
+
+            
+        }
+
+        .image-group img:hover {
+            transform: scale(1.1);
+            gap: 100px;
+        }
+        .image-group img:nth-child(3) {
+           
+            right: 100px;
+            top:  60px;
+            z-index: 3;
+           
+        }
+        .image-group img:nth-child(2) {
+            right: 10px;
+            top: 50px;
+            z-index: 2;
+           
+        }
+       
+
+       
+        .welcome-containerrr {
+            background-color: white;
+            color: black;
+            overflow: hidden; /* Ẩn phần chữ chạy ra ngoài */
+            padding: 20px 0; /* Giảm padding dọc */
+        }
+        .welcome-texttt {
+            white-space: nowrap; /* Ngăn chữ xuống dòng */
+            font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+            font-weight: 500;
+            padding-left: 0%; /* Đẩy chữ ra ngoài bên phải ban đầu */
+            animation: marquee 12s linear infinite; /* Tạo hiệu ứng chạy */
+            letter-spacing: 20px;/*chạy chữ */
+           font-family: initial;
+        }
+        .welcome-text {
+            width: fit-content;
+            margin: auto;
+            background-image:linear-gradient(lightblue,green );
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #166534;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho văn bản chào mừng */
+            background: linear-gradient(135deg, #e0fae3 0%, #1be34a 33%, #b6f4d3 66%, #0af477 100%);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:black;
+            max-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            border: 1px ;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 20px 26px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            margin-top: 20px;
+        }
+        .dropdown-content a:hover {
+            background: white;
+            color: rgb(232, 63, 63);
+            border-bottom: 2px solid black;
+        }
+        .dropdown:hover .dropdown-content {display: block;}
+        .navbar-blue {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-blue a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-blue a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .hidden-md-flex-items-center-space-x-8 a:hover{
+            color: lightblue
+        }
+        .noidung{
+            padding-left: 70px;
+            padding-right: 70px;
+           padding-bottom: 50px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Giới hạn kích thước */
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;  /* Tăng chiều rộng */
+            height: 500px; /* Tăng chiều cao */
+            object-fit: cover; /* Giữ tỷ lệ, tránh méo ảnh */
+            display: block;
+            border-radius: 10px; /* Bo góc ảnh */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 0, 0, 0.5); /* Làm tối ảnh */
+            border-radius: 10px;
+        }
+
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        .anhcuoi img{
+            height: 200px;
+            width: 1560px;
+        }
+        .image-container {
+            overflow: hidden; /* Để ẩn phần ảnh bị tràn khi hover */
+            }
+
+        .side-image {
+            transition: transform 0.3s ease-in-out; /* Tạo hiệu ứng mượt mà */
+        }
+
+        .image-container:hover .side-image {
+            transform: scale(1.1); /* Phóng to ảnh lên 1.1 lần khi hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="navbar-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <span class="text-xl font-bold"><img  width="300" align="center" src="./logo7.jpg">  </span>
+
+                <div style="font-family: initial;" class="hidden-md-flex-items-center-space-x-8">
+                    <a href="#">TRANG CHỦ </a>
+                    <a href="#">HẠ LONG </a>
+                    <div class="dropdown">
+                        <a href="#">ĐỊA ĐIỂM</a>
+                        <div style="font-family: initial;" class="dropdown-content">
+                           <a href="#congvien" style="text-decoration: none;">CÔNG VIÊN </a>
+                            <a href="#hangda" style="text-decoration: none;"> HANG ĐÁ  </a>
+                            <a href="#biendao"  style="text-decoration: none;">BIỂN ĐẢO  </a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">TIN TỨC</a>
+                        <div class="dropdown-content">
+                            <a href="#nhandan"> NHÂN DÂN</a>
+                            <a href="#laodong"> LAO ĐỘNG  </a>
+                            <a href="#chinhtri">CHÍNH TRỊ </a>
+                        </div>
+                    </div>
+                    <a href="lienhe.html">LIÊN HỆ </a>
+                </div>
+                <button class="md:hidden text-gray-500">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="welcome-containerrr">
+        <p class="welcome-texttt">CHÀO MỪNG ĐẾN VỚI DI SẢN THIÊN NHIÊN THẾ GIỚI</p>
+    </section>
+    <section class="banner-video">
+        <video autoplay muted loop >
+            <source src="./HaLong.mp4" type="">
+        </video>
+    </section>
+
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div class="van-ban-gioi-thieu">
+                    <h1 class="tieu-de-gioi-thieu">Cuộc phiêu lưu Hạ Long đang chờ bạn</h1>
+                    <p class="mo-ta-gioi-thieu">Khám phá Hạ Long ngoạn mục tìm hiểu nền văn hóa sôi động và bắt đầu những cuộc phiêu lưu khó quên với các tour du lịch có hướng dẫn viên</p>
+                    <div class="nut-gioi-thieu">
+                        <a href="#clickvaonhe" style="text-decoration: none;"><button class="nut-chinh">Khám phá Hạ Long ngay</button></a>
+                        <a href="k1.html"><button class="nut-phu">Đánh giá </button></a>
+                    </div> 
+                </div>
+                <div class="image-group">
+                    <div class="side-images-container">
+                      <img src="hang.jpg" alt="Ảnh nhỏ 1" class="side-image">
+                      <img src="2.jpg" alt="Ảnh lớn" class="main-image">
+                      <img src="choi.webp" alt="Ảnh nhỏ 2" class="side-image">
+                    </div>
+                  </div>
+                     
+            </div>
+        </div>
+    </section>
+    <section class="noidung">
+        <section >
+            <div class="welcome-text" style="background-color: #dcfce7; color: #166534; width: fit-content; margin: 20px auto; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center;  border-bottom: 2px solid green;">
+                    Cẩm nang du lịch Hạ Long
+                </div>
+        </section>
+        <h1 align="center" style="font-size: 50px;"><b>Lịch sử Hạ Long</b> </h1>
+        <p align="left" style="font-family: initial; font-size: 130%;padding-left: 50px;padding-right: 50px;">Hạ Long, với vẻ đẹp kỳ vĩ và tráng lệ, là một trong những thắng cảnh nổi tiếng không chỉ trong nước mà còn trên thế giới. Được hình thành qua hàng triệu năm, nơi đây là minh chứng sống động cho sự biến đổi của vỏ trái đất, với các quá trình kiến tạo địa chất phức tạp, đặc biệt là trong các kỷ Ordovic và Neogen. Những dãy núi đá vôi trùng điệp, nhấp nhô trên mặt biển, tạo nên một bức tranh thiên nhiên tuyệt mỹ, làm say lòng bao du khách khi đặt chân đến đây.
+
+            Hạ Long không chỉ thu hút với vẻ đẹp tự nhiên, mà còn chứa đựng dấu ấn lịch sử văn hóa sâu sắc. Các di tích khảo cổ học cho thấy rằng khu vực này đã là nơi cư trú của con người từ thời tiền sử. Những nền văn hóa cổ như Soi Nhụ và Cái Bèo đã để lại những dấu vết quan trọng về cuộc sống của tổ tiên ta từ hàng nghìn năm trước. Những di chỉ này không chỉ phản ánh đời sống sinh hoạt, mà còn là những minh chứng về sự phát triển của nền văn minh sông Hồng từ rất lâu.
+
+            Trong suốt chiều dài lịch sử, Hạ Long còn gắn liền với những chiến công oai hùng của dân tộc. Đây là nơi đã diễn ra nhiều trận thủy chiến quan trọng, đặc biệt là trong thời kỳ kháng chiến chống ngoại xâm. Mỗi mảnh đất, mỗi dòng nước tại đây đều mang trong mình những câu chuyện lịch sử hào hùng, từ những cuộc chiến đấu bảo vệ tổ quốc đến những chiến thắng vẻ vang, góp phần viết nên những trang sử vàng của dân tộc.
+
+            Ngày nay, Hạ Long không chỉ là một kỳ quan thiên nhiên được UNESCO công nhận là Di sản Thiên nhiên Thế giới, mà còn là biểu tượng của văn hóa và lịch sử của đất nước Việt Nam. Hạ Long là điểm đến thu hút hàng triệu du khách từ khắp nơi trên thế giới. Du khách đến đây không chỉ để chiêm ngưỡng vẻ đẹp tuyệt vời của những hòn đảo đá vôi nổi bật giữa làn nước xanh biếc, mà còn để khám phá những giá trị lịch sử, văn hóa độc đáo. Các lễ hội truyền thống, các di tích lịch sử và những câu chuyện dân gian xung quanh Hạ Long vẫn tiếp tục là nguồn cảm hứng cho nhiều thế hệ, giữ vững giá trị cội nguồn và truyền thống văn hóa dân tộc. Hạ Long, qua bao thế kỷ, vẫn luôn là một điểm sáng trên bản đồ du lịch thế giới, không chỉ bởi cảnh quan thiên nhiên tươi đẹp mà còn bởi sự hòa quyện giữa giá trị lịch sử, văn hóa và thiên nhiên. Mỗi chuyến thăm đến Hạ Long đều mang lại cho du khách một trải nghiệm đầy ấn tượng và khó quên.
+        </p>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <section >
+                    <div class="welcome-text" style="background-color: #dcfce7; color: #166534; width: fit-content; margin: 20px auto; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                        <div id="congvien" style="text-align: center;  border-bottom: 2px solid green; width: fit-content;
+    margin: auto;">
+                            Hạ Long mùa nào cũng đẹp
+                        </div>
+                </section>
+                    <p style="color: #166534;" class="text-lg text-gray-600 max-w-2xl mx-auto ">The journey to the magical Ha Long.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <img src="1.jpg" alt="">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3"> Đắm mình trong không gian thiên nhiên Hạ Long</h3>
+                        <p class="text-gray-600">Hạ Long, với hai mùa sắc, mang đến những trải nghiệm du lịch đa dạng. Mùa hè rực rỡ (tháng 5-10) là thời điểm lý tưởng cho các hoạt động biển sôi động. Mùa đông yên bình (tháng 11-4) lại quyến rũ du khách bởi vẻ đẹp trầm mặc và không gian tĩnh tĩnh.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <img src="he.jpg" alt="">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Vẻ đẹp rựa rỡ trong mùa hè sôi động </h3>
+                        <p class="text-gray-600">Mùa hè ở Hạ Long là con đường thiên đường của những trải nghiệm sôi động. Nắng vàng rực rỡ xuống làn nước biển xanh biếc, tạo nên khung cảnh tuyệt đẹp. Đây là thời điểm lý tưởng để bạn đắm mình trong suối nước mát lạnh, tham gia các trò chơi thể thao dưới nước sôi động, chèo thuyền kayak khám phá những hang động kỳ vĩ và thưởng thức hải sản tươi ngon. Không khí nóng nhiệt của mùa du lịch cao điểm sẽ mang đến cho bạn những trải nghiệm khó quên, những kỷ niệm mùa hè rực rỡ bên bờ biển..</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <img src="dong.jpg" alt="">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Vẻ đẹp lặng lẽ, huyền bí và lạnh giá thật ấn tượng trong mùa đông.</h3>
+                        <p class="text-gray-600">Khi mùa đông đến, từ tháng 11 đến tháng 4, Hạ Long trở về yên bình và tĩnh lặng hơn. Tiết trời se lạnh mang đến cho biển một vẻ đẹp trầm mặc, lãng mạn. Đây là thời điểm lý tưởng để bạn du ngoạn vịnh cảnh, khám phá những hang động kỳ vĩ, tham quan các làng chài truyền thống và thưởng thức ẩm thực địa phương. Không gian tĩnh và ấm cúng sẽ mang đến cho bạn những giây phút thư giãn và tận hưởng vẻ đẹp của Hạ Long.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="noidung">
+        <div class="welcome-text">
+            <div style="text-align: center; border-bottom: 2px solid green;">
+               Quá trình di chuyển 
+            </div>
+        </div>
+    
+        <div class="hero">
+            <img src="anhp4.jpg" alt="Hạ Long Bay">
+            <div class="overlay"></div>
+            <div class="content">
+                <div style="padding-left: 50px;padding-right: 50px;"></div>
+                <p align="center"> Từ các tỉnh thành khác, cách thực tế nhất để đến Hạ Long là di chuyển bằng máy bay hoặc xe khách. Nếu bạn ở xa như TP.HCM hay Đà Nẵng, bay thẳng đến sân bay Vân Đồn là lựa chọn tối ưu, sau đó đi taxi hoặc xe trung chuyển khoảng 50km để đến Hạ Long. Với các tỉnh lân cận, xe khách là phương tiện phổ biến và tiết kiệm, có nhiều tuyến đi thẳng đến Hạ Long hoặc các thành phố lớn gần đó n rồi tiếp tục di chuyển bằng xe khách địa phương. Dù chọn phương tiện nào, thì việc di chuyển đến Hạ Long luôn đảm bảo chuyến thuận lợi.</p>
+            </div>
+        </div>
+    </section>
+    <div class="welcome-text" id="hangda">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Chơi gì</p>
+        </div>
+    </div>
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div class="van-ban-gioi-thieu">
+                    
+                    <h1 class="tieu-de-gioi-thieu">Thám hiểm những hang động </h1>
+                    <p class="mo-ta-gioi-thieu">Hang Đá Hạ Long là một tuyệt tác thiên nhiên với những khối thạch nhũ kỳ ảo, lung linh dưới ánh sáng. Không gian trong hang rộng lớn, mát lạnh, vang vọng tiếng nước nhỏ tí tách và gió vi vu. Mỗi góc hang đều mang vẻ đẹp huyền bí, gợi lên những câu chuyện cổ xưa, làm say lòng du khách.</p>
+                    
+                </div>
+                <div class="image-group">
+                        <div class="side-images-container">
+                          <img src="choigi1.jpeg" alt="Ảnh nhỏ 1" class="side-image">
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div class="van-ban-gioi-thieu">
+                   
+                    <h1 class="tieu-de-gioi-thieu">Chèo kayak</h1>
+                    <p class="mo-ta-gioi-thieu">Tự do lướt trên làn nước xanh, mang đến cảm giác vừa phấn khích vừa thư thái. Khi tự tay điều khiển mái chèo, bạn sẽ thấy mình thật nhỏ bé giữa thiên nhiên hùng vĩ, lướt qua làn nước trong xanh và len lỏi vào những hang động huyền bí. Tiếng sóng vỗ nhẹ, gió biển mát rượi cùng khung cảnh thơ mộng khiến mọi mệt mỏi tan biến, chỉ còn lại sự tự do và hứng khởi đầy mê hoặc.</p>
+                    
+                </div>
+                <div class="image-group">
+                        <div class="side-images-container">
+                          <img src="choigi2.jpg" alt="Ảnh nhỏ 1" class="side-image">
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div class="van-ban-gioi-thieu">
+                   
+                    <h1 class="tieu-de-gioi-thieu">Tắm biển ở Hạ Long</h1>
+                    <p class="mo-ta-gioi-thieu">Cảm giác sảng khoái khi đắm mình trong làn nước trong xanh, mát lạnh. Cát trắng mịn, sóng vỗ nhẹ nhàng cùng không khí trong lành tạo nên một không gian thư giãn tuyệt vời. Dù bơi lội, vui đùa hay đơn giản là nằm dài trên bãi biển ngắm hoàng hôn, bạn đều cảm nhận được vẻ đẹp yên bình và quyến rũ của Hạ Long.</p>
+                    
+                </div>
+                <div class="image-group">
+                    <video autoplay muted loop >
+                        <source src="./video5.mp4" type="">
+                    </video>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div  class="van-ban-gioi-thieu">
+                   
+                    <h1 id="biendao"  class="tieu-de-gioi-thieu">Làng chài nổi</h1>
+                    <p class="mo-ta-gioi-thieu">Trải nghiệm làng chài Vung Viêng, Cửa Vạn giúp du khách khám phá cuộc sống ngư dân giữa vịnh Hạ Long. Ngồi thuyền nan dạo quanh những ngôi nhà nổi, bạn có thể xem ngư dân kéo lưới, câu mực và thử chèo thuyền. Giữa không gian yên bình, bao quanh là núi đá vôi hùng vĩ, làng chài mang đến cảm giác thư thái và những kỷ niệm đáng nhớ.</p>
+                    
+                </div>
+                <div class="image-group">
+                    <div class="side-images-container">
+                        <img src="choigi3.png" alt="Ảnh nhỏ 1" class="side-image">
+                      </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div class="van-ban-gioi-thieu">
+                   
+                    <h1 class="tieu-de-gioi-thieu">Thưởng thức ẩm thực</h1>
+                    <p class="mo-ta-gioi-thieu"> Những trải nghiệm khó quên với những món hải sản tươi ngon. Chả mực giòn dai, bề bề hấp ngọt thịt, sá sùng nướng thơm lừng hay cua ghẹ chắc thịt đều hấp dẫn. Hương vị biển cả đậm đà khiến ai cũng muốn quay lại thưởng thức lần nữa.</p>
+                    
+                </div>
+                <div class="image-group">
+                    <div class="side-images-container">
+                        <img src="choigi5.jfif" alt="Ảnh nhỏ 1" class="side-image">
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="noidung" id="clickvaonhe">
+        <div class="welcome-text" style="background-color: #dcfce7; color: #166534; width: fit-content; margin: 20px auto; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <div style="text-align: center;  border-bottom: 2px solid green;">
+                Gợi ý những địa điểm thăm quan nổi bật mang đậm dấu ấn Hạ Long.
+            </div>
+    </section>
+    <section>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="bg-gray-50 p-8 rounded-xl image-container">
+            <a href="VinhBTL.html"><img style="width: 350px;height: 300px;" src="dd11.jpg" alt="Ảnh nhỏ 1" class="side-image"></a>
+            <h2 class="text-gray-600" align="center" style="color: rgb(20, 228, 235);padding-top: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;width: 150px;height: 150px;padding-top: 15px;">Vịnh Bái Tử Long</h2>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl image-container">
+            <a href="Vinhhalong.html"><img style="width: 450px;height: 300px;" src="dd22.jpg" alt="Ảnh nhỏ 2" class="side-image"></a>
+            <h2 class="text-gray-600" align="center" style="color: rgb(20, 228, 235);padding-top: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;width: 150px;height: 150px;padding-top: 15px;"><i>Vịnh Hạ Long</i></h2>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl image-container">
+            <a href="Daotuanchau.html"><img style="width: 390px;height: 300px;" src="dd33.jpg" alt="Ảnh nhỏ 3" class="side-image"> </a>
+            <h2 class="text-gray-600" align="center" style="color: rgb(20, 228, 235);padding-top: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;width: 150px;height: 150px;padding-top: 15px;"><i>Đảo Tuần Châu </i></h2>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="bg-gray-50 p-8 rounded-xl image-container">
+            <a href="Nuibaitho.html"> <img style="width: 350px;height: 300px;" src="dd44.jpg" alt="Ảnh nhỏ 4" class="side-image"></a>
+            <h2 class="text-gray-600" align="center" style="color: rgb(20, 228, 235);padding-top: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;width: 150px;height: 150px;padding-top: 15px;">Núi Bài Thơ</h2>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl image-container">
+            <a href="TamBaiChay.html"><img style="width: 450px;height: 300px;" src="dd55.jpg" alt="Ảnh nhỏ 5" class="side-image"></a>
+            <h2 class="text-gray-600" align="center" style="color: rgb(20, 228, 235);padding-top: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 150px;height: 150px;padding-top: 15px;"><i>Bãi tắm biển Bãi Cháy </i></h2>
+          </div>
+          <div class="bg-gray-50 p-8 rounded-xl image-container">
+            <a href="PhoCo.html"><img style="width: 390px;height: 300px;;"src="dd66.jpg" alt="Ảnh nhỏ 6" class="side-image"></a>
+            <h2 class="text-gray-600" align="center" style="color: rgb(20, 228, 235);padding-top: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;width: 150px;height: 150px; padding-top: 15px;"><i> Phố cổ Hạ Long </i></h2>
+          </div>
+        </div>
+      </section>
+        
+    </section>
+    
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Tin tức </p>
+        </div>
+    </div>
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div class="van-ban-gioi-thieu">
+                    <p id="nhandan" class="mo-ta-gioi-thieu" >- Thanh niên Hạ Long tích cực tham gia vào các hoạt động đổi mới và phát triển địa phương, đặc biệt trong chuyển đổi số. Họ thành lập các tổ công nghệ số cộng đồng, triển khai mô hình tình nguyện số, góp phần xây dựng thành phố thông minh. Đoàn Thanh niên cũng tổ chức các hoạt động hỗ trợ thanh niên lập nghiệp và phát triển kỹ năng nghề nghiệp.</p>
+                    <p id="laodong" class="mo-ta-gioi-thieu">- Thành phố Hạ Long đã tạo việc làm cho 1.534 lao động trong những tháng đầu năm 2024, đạt 22% kế hoạch năm. Tỷ lệ lao động qua đào tạo đạt 90,43%, trong đó 75,32% có bằng cấp, chứng chỉ, phản ánh sự chú trọng vào phát triển kỹ năng nghề nghiệp.</p>
+                    <p id="chinhtri" class="mo-ta-gioi-thieu">- Hạ Long chú trọng xây dựng Đảng và hệ thống chính trị, tổ chức nhiều đợt sinh hoạt chính trị để quán triệt quan điểm của Đảng. Thành phố cũng tập trung xây dựng quốc phòng toàn dân, hoàn thành giai đoạn 1 căn cứ chiến đấu và triển khai giai đoạn 2 để đảm bảo an ninh và phát triển bền vững.</p>
+                </div>
+                <div class="image-group">
+                    <div class="side-images-container">
+                      <img src="bao1.jfif" alt="Ảnh nhỏ 1" class="side-image">
+                      <img src="bao2.jfif" alt="Ảnh lớn" class="main-image">
+                      <img src="bao3.jfif" alt="Ảnh nhỏ 2" class="side-image">
+                    </div>
+                  </div>
+                     
+            </div>
+        </div>
+    </section>
+    <section >
+        <div class="welcome-text" style="background-color: #dcfce7; color: #166534; width: fit-content; margin: 20px auto; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <div style="text-align: center;  border-bottom: 2px solid green;">Xem nhận xét đánh giá tích cực từ trang thông tin điện tử 
+            </div>
+    </section>
+    <section>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div  class="bg-gray-50 p-8 rounded-xl">
+                <img src="./ng1.jpg" alt="">
+                
+                <p class="text-gray-600"><i>Khám phá Hạ Long qua trang web của Vịnh Hạ Long mang đến cho tôi cảm giác chân thực và cảnh đẹp của Hạ Long. Hình ảnh tuyệt đẹp và thông tin sâu sắc đã giúp tôi lên kế hoạch cho một chuyến đi khó quên. Rất khuyến khích cho bất kỳ ai muốn trải nghiệm sự kỳ diệu của Quảng Ninh.
+                    - An Phạm</i></p>
+            </div>
+            <div class="bg-gray-50 p-8 rounded-xl">
+                <img src="ng2.jpg" alt="">
+                
+                <p class="text-gray-600"><i>Trang web du lịch của 
+                    Vịnh Hạ Long là viên ngọc quý để khám phá Hạ Long. Những bức ảnh đẹp ngoạn mục và gợi ý hành trình dễ thực hiện giúp tôi lập kế hoạch du lịch một cách liền mạch. Đây là nguồn tài nguyên vô giá để nắm bắt được bản chất của những kỳ quan thiên nhiên Quảng Ninh!
+                    - Linh Trân</i></p>
+            </div>
+            <div class="bg-gray-50 p-8 rounded-xl">
+                <img src="ng3.jpg" alt="">
+                
+                <p class="text-gray-600"><i>Trang web của Vịnh Hạ Long giới thiệu vẻ đẹp của Vịnh Hạ
+                    Long một cách tuyệt vời. Hình ảnh sống động và hướng dẫn chi tiết giúp việc lập kế hoạch cho chuyến đi trở nên dễ dàng. Đây là nguồn tài nguyên không thể bỏ qua cho bất kỳ ai háo hức khám phá cảnh quan tuyệt đẹp của Quảng Ninh.
+                    - Minh Nguyên</i></p>
+        </div>
+    </section>
+    <section >
+        <div class="welcome-text" style="background-color: #dcfce7; color: #166534; width: fit-content; margin: 20px auto; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <div style="text-align: center;  border-bottom: 2px solid green;">MẸO DU LỊCH 
+            </div>
+    </section>
+    <section >
+        <div class="anhcuoi">
+        <img src="./CUOIBAI.jpg" alt=""></div>
+    </section>
+<footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Du Lịch Hạ Long</h3>
+                    <p class="text-gray-400"> Giúp bạn có một hành trình tìm hiểu về Hạ Long - Quảng Ninh thật ý nghĩa </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Về chúng tôi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Trang Chủ </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Hạ Long </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Địa Điểm </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tin tức </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Liên hệ </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Địa chỉ: </h3>
+                    <ul class="space-y-2">
+                       <p>Đại học Công Nghiệp Cơ Sở 1, Đường Cầu Diễn ,Nhổn,Minh Khai,Bắc Từ Liêm,Hà Nội</p>
+                       <p>Liên Hệ: 0325478305</p>
+                       <p></p>
+                        <li><a hregray-400 hover:text-white>Quảng bá địa điểm thăm quan</a></li>f="test.html#" </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1BpWkqPHqT/?mibextid=wwXIfr" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; Xin chân thành cảm ơn </p>
+            </div>
+        </div>
+    </footer>
+
+
+    
+   
+                       
+
+    

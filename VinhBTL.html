@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lien he </title>
+    <style>
+        
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #e3f9ff;
+        }
+        .banner-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .phan-gioi-thieu {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.container-gioi-thieu {
+    width: 80%;
+}
+
+.noi-dung-gioi-thieu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Mặc định xếp dọc trên mobile */
+}
+
+/* Khi màn hình lớn hơn 768px thì xếp ngang */
+@media (min-width: 768px) {
+    .noi-dung-gioi-thieu {
+        flex-direction: row;
+    }
+}
+        .welcome-containerrr {
+            background-color: white;
+            color: black;
+            overflow: hidden; /* Ẩn phần chữ chạy ra ngoài */
+            padding: 20px 0; /* Giảm padding dọc */
+        }
+        .welcome-texttt {
+            white-space: nowrap; /* Ngăn chữ xuống dòng */
+            font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+            font-weight: 500;
+            padding-left: 0%; /* Đẩy chữ ra ngoài bên phải ban đầu */
+            animation: marquee 12s linear infinite; /* Tạo hiệu ứng chạy */
+            letter-spacing: 20px;/*chạy chữ */
+           font-family: initial;
+        }
+        .welcome-text {
+            width: fit-content;
+            margin: auto;
+            background-image:linear-gradient(lightblue,green );
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #166534;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho văn bản chào mừng */
+            background: linear-gradient(135deg, #b6f4d3 16% 0%, #5186f0 33%, #b6f4d3 66%, #0a0af4 100%);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:black;
+            max-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            border: 1px ;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 20px 26px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            margin-top: 20px;
+        }
+        .dropdown-content a:hover {
+            background: white;
+            color: rgb(232, 63, 63);
+            border-bottom: 2px solid black;
+        }
+        .dropdown:hover .dropdown-content {display: block;}
+        .navbar-blue {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           
+        }
+        .navbar-blue a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-blue a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .hidden-md-flex-items-center-space-x-8 a:hover{
+            color: lightblue
+        }
+        .noidung{
+            padding-left: 70px;
+            padding-right: 70px;
+           padding-bottom: 50px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Giới hạn kích thước */
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;  /* Tăng chiều rộng */
+            height: 500px; /* Tăng chiều cao */
+            object-fit: cover; /* Giữ tỷ lệ, tránh méo ảnh */
+            display: block;
+            border-radius: 10px; /* Bo góc ảnh */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 0, 0, 0.5); /* Làm tối ảnh */
+            border-radius: 10px;
+        }
+
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+    
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        .offer {
+            background-color: #ff5c5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .contact {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #14a2e8;
+            border: 1px solid #bce8f1;
+            border-radius: 5px;
+        }
+        .contact input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 20px);
+        }
+        .sss{
+            background-color: #14a2e8;
+            padding-top: 10px;
+            padding-left: 50px;
+            height:  200px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <body class="bg-gray-50">
+            <nav class="navbar-blue">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <span class="text-xl font-bold"><img  width="300" align="center" src="logo7.jpg">  </span>
+                </div>
+            </nav>
+            <section class="welcome-containerrr">
+                <p class="welcome-texttt">CHÀO MỪNG ĐẾN VỚI DI SẢN THIÊN NHIÊN THẾ GIỚI</p>
+            </section>
+    </header>
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 1px solid green;">
+            <p>Vịnh Bái Tử Long ở đâu ?</p>
+        </div>
+    </div>
+        <div style="padding-left:40px ;line-height: 1.75;padding-right: 50px;"align="left" >
+            <p >Bái Tử Long là một vịnh biển của Quảng Ninh - Việt Nam, gồm hàng trăm đảo lớn nhỏ, nằm trong vịnh Bắc Bộ, thuộc vùng Đông Bắc Việt Nam. Vịnh Bái Tử Long bao gồm một vùng biển của thành phố Hạ Long, thành phố Cẩm Phả và huyện đảo Vân Đồn. Phía Tây Nam của vịnh giáp vịnh Hạ Long, phía Tây giáp đất liền thành phố Cẩm Phả, phía Đông giáp biển và phía Đông Bắc giáp huyện đảo Cô Tô.</p>
+            <div align="center">
+                <img  width="800px"height=500px src="BBL1.jpg"alt="Ảnh nhỏ 1" class="side-image">
+            </div>
+        </div>
+    </div>
+    <div >
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Di tích lịch sử vịnh Bái Tử Long</p>
+        </div> 
+    </div>
+        <div  style="padding-left: 50px;line-height: 1.75;padding-right: 50px;"align="left"pa>
+            <p>Lịch sử vịnh Bái Tử Long gắn liền với những trang sử hào hùng của dân tộc Việt Nam. 
+                Đó là địa danh Vân Đồn - cửa biển sầm uất từ thời Lý. Cách đây gần 900 năm, đây là nơi tấp nập thương nhân từ Xiêm La, Trung Quốc, Nhật Bản, Ấn Độ,... tới trao đổi hàng hóa.
+                Vịnh Bái Tử Long cũng là nơi tưởng nhớ những chiến công oai hùng của tướng Trần Khánh Dư và 3 anh em họ Phạm (người xã Quan Lạn) đánh tan đoàn thuyền lương thảo của tướng giặc Nguyên Mông Trương Văn Hổ (năm 1288).
+            </p>
+            <div align="center">
+            <img width="800px"height=500px src="BTL2.jpg"><br></div>
+            <p>Ngoài ra, trên vịnh còn có đền Cửa Ông (đền Suốt) thờ Hưng Nhượng Vương Trần Quốc Tảng (con thứ ba của Đức ông Hưng Đạo Vương Trần Quốc Tuấn). </p>
+        </div>
+   </div>
+   </div>
+   <div style="padding-top: 40px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Vẻ đẹp của vịnh Bái Tử Long</p>
+        </div> </div>
+        <div align="left"style="padding-left: 50px;line-height: 1.75;padding-right: 50px;">
+            <p >Những năm gần đây, dịch vụ du lịch vịnh Bái Tử Long ngày càng phát triển. Vịnh biển này làm say lòng biết bao du khách phương xa bởi:</p>
+            <p ><b>- Vẻ đẹp huyền ảo của hàng trăm hòn đảo lớn - nhỏ: </b>được kiến tạo từ hàng nghìn năm trước, mỗi hòn đảo đều có nét đẹp kỳ vĩ, cổ xưa, tạo nên một bức tranh thủy mặc hút hồn du khách. Ghé thăm vịnh, du khách sẽ được thỏa thích khám phá huyện đảo Vân Đồn và các cụm đảo Cặp Kỳ Giã, Cặp Kỳ Nhảy, Hòn Ba Sao, Hòn Chồng, đảo Quan Lạn, đảo Minh Châu hay động Mê Cung, động Thiên Cảnh, Hòn Con Cò, núi Bài Thơ,...</p>
+            <p ><b>- Sở hữu nhiều bãi biển đẹp nguyên sơ:  </b>vịnh đảo Bái Tử Long nổi tiếng với nhiều bãi biển đẹp nguyên sơ như bãi Minh Châu, bãi Con Cò, biển Cô Tô, bãi biển Vân Đồn, Quan Lạn,... Chắc chắn du khách ghé đến nơi đây sẽ choáng ngợp trước biển cả mênh mông cùng những bãi cát dài trắng mịn trải dọc bờ biển. Đến đây, du khách được thỏa thích đắm mình trong làn nước biển trong xanh và hít đầy lồng ngực bầu không khí mát lành.</p>
+            <p ><b>- Cảnh đẹp thiên nhiên say đắm lòng người:  </b>cho dù là bình minh hay hoàng hôn, cảnh biển trên vịnh đều đẹp lung linh. Ở chốn thiên đường này, du khách sẽ có những bức hình tuyệt đẹp.</p><br>
+        <div align="center">
+            <img width="800px"height=500px src="BTL3.jpg"><br></div>
+        </div>
+   </div>
+   <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Nên đi du lịch vịnh Bái Tử Long vào tháng mấy?</p>
+        </div> </div>
+        <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+            <p>Nếu quan tâm với câu hỏi nên đi du lịch Quảng Ninh tháng mấy, thời điểm lý tưởng để tham quan vịnh Bái Tử Long lý tưởng là khi nào thì câu trả lời cho du khách là vào mùa hè, từ tháng 3 - tháng 5 hằng năm. Khi tới tham quan địa điểm du lịch nổi tiếng này vào mùa hè, du khách có thể thỏa sức tắm biển và tham gia các trò chơi dưới nước để giải nhiệt ngày hè. 
+                Nếu muốn ngắm cảnh ở những địa điểm du lịch vịnh Bái Tử Long thì du khách có thể ghé đến nơi đây vào mùa thu, khoảng tháng 8 - tháng 10 hằng năm. Vào mùa thu, nước biển trong xanh, không khí dễ chịu, rất phù hợp cho những chuyến thưởng ngoạn cảnh vịnh.
+                </p><br>
+                <div align="center">
+                <img  width="800px"height=500px src="BTL4.jpg"><br></div>
+            <p>Mỗi mùa tại vịnh biển nổi tiếng này đều có những trải nghiệm thú vị riêng cho du khách. Tuy nhiên, khách du lịch nên hạn chế tham quan vịnh vào khoảng tháng 6 - tháng 7 hằng năm. Nguyên nhân vì thời điểm này tại vịnh thường xuất hiện mưa bão bất chợt, gây ảnh hưởng tới trải nghiệm du lịch của khách tham quan.</p>
+         </div>  
+        </div>
+</div>
+</body>
+</html>

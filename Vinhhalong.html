@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lien he </title>
+    <style>
+        
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #e3f9ff;
+        }
+        .banner-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .phan-gioi-thieu {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.container-gioi-thieu {
+    width: 80%;
+}
+
+.noi-dung-gioi-thieu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Mặc định xếp dọc trên mobile */
+}
+
+/* Khi màn hình lớn hơn 768px thì xếp ngang */
+@media (min-width: 768px) {
+    .noi-dung-gioi-thieu {
+        flex-direction: row;
+    }
+}
+        .welcome-containerrr {
+            background-color: white;
+            color: black;
+            overflow: hidden; /* Ẩn phần chữ chạy ra ngoài */
+            padding: 20px 0; /* Giảm padding dọc */
+        }
+        .welcome-texttt {
+            white-space: nowrap; /* Ngăn chữ xuống dòng */
+            font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+            font-weight: 500;
+            padding-left: 0%; /* Đẩy chữ ra ngoài bên phải ban đầu */
+            animation: marquee 12s linear infinite; /* Tạo hiệu ứng chạy */
+            letter-spacing: 20px;/*chạy chữ */
+           font-family: initial;
+        }
+        .welcome-text {
+            width: fit-content;
+            margin: auto;
+            background-image:linear-gradient(lightblue,green );
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #166534;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho văn bản chào mừng */
+            background: linear-gradient(135deg, #b6f4d3 16% 0%, #5186f0 33%, #b6f4d3 66%, #0a0af4 100%);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:black;
+            max-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            border: 1px ;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 20px 26px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            margin-top: 20px;
+        }
+        .dropdown-content a:hover {
+            background: white;
+            color: rgb(232, 63, 63);
+            border-bottom: 2px solid black;
+        }
+        .dropdown:hover .dropdown-content {display: block;}
+        .navbar-blue {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           
+        }
+        .navbar-blue a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-blue a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .hidden-md-flex-items-center-space-x-8 a:hover{
+            color: lightblue
+        }
+        .noidung{
+            padding-left: 70px;
+            padding-right: 70px;
+           padding-bottom: 50px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Giới hạn kích thước */
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;  /* Tăng chiều rộng */
+            height: 500px; /* Tăng chiều cao */
+            object-fit: cover; /* Giữ tỷ lệ, tránh méo ảnh */
+            display: block;
+            border-radius: 10px; /* Bo góc ảnh */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 0, 0, 0.5); /* Làm tối ảnh */
+            border-radius: 10px;
+        }
+
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+    
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        .offer {
+            background-color: #ff5c5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .contact {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #14a2e8;
+            border: 1px solid #bce8f1;
+            border-radius: 5px;
+        }
+        .contact input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 20px);
+        }
+        .sss{
+            background-color: #14a2e8;
+            padding-top: 10px;
+            padding-left: 50px;
+            height:  200px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <body class="bg-gray-50">
+            <nav class="navbar-blue">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <span class="text-xl font-bold"><img  width="300" align="center" src="logo7.jpg">  </span>
+                </div>
+            </nav>
+            <section class="welcome-containerrr">
+                <p class="welcome-texttt">CHÀO MỪNG ĐẾN VỚI DI SẢN THIÊN NHIÊN THẾ GIỚI</p>
+            </section>
+    </header>
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 1px solid green;">
+            <p>Vịnh Hạ Long ở đâu ?</p>
+        </div>
+    </div>
+        <div style="padding-left:40px ;line-height: 1.75;padding-right: 50px;"align="left" >
+            <p >Vịnh Hạ Long là một Vịnh thuộc tỉnh Quảng Ninh, Việt Nam. Vịnh từng được UNESCO nhiều lần công nhận là Di sản thiên nhiên của Thế Giới.<br>
+                Vịnh nổi tiếng với gần 2000 hòn đảo lớn nhỏ, đặc biệt là đảo đá vôi, trải dài trên 1.553 km2. Trong đó, vùng lõi Vịnh rộng 335 km2, tập trung dày đặc 775 hòn đảo.</p>
+            <div align="center">
+                <img  width="800px"height=500px src="VHL1.jpg"alt="Ảnh nhỏ 1" class="side-image">
+            </div>
+            <p>Quá trình hình thành và phát triển hàng chục triệu năm giữa địa chất, địa mạo, khí hậu và môi trường đã tạo nên hệ sinh thái đa dạng tại Vịnh. Giờ đây, Hạ Long Bay dày đặc hệ sinh thái rừng, hệ sinh thái biển và ven bờ cùng nhiều tiểu hệ sinh thái khác nhau.<br>
+                Ngoài ra, Vịnh còn là nơi sinh sống của hàng ngàn loài động, thực vật đa dạng. Điều này góp phần tạo nên giá trị sinh học độc đáo cho vùng di sản thiên nhiên này.</p>
+                <div align="center">
+                    <img  width="800px"height=500px src="VHL2.jpg"alt="Ảnh nhỏ 1" class="side-image">
+                </div>
+            <p>Vịnh nằm ở phía Đông Bắc, thuộc địa phận tỉnh Quảng Ninh. Vịnh nằm ở bờ tây Vịnh Bắc Bộ tại khu vực biển Đông Bắc, bao gồm vùng biển đảo của thành phố Hạ Long. Vịnh nằm cách thủ đô Hà Nội khoảng 165km. Đây là một điểm đến dễ dàng tiếp cận và lý tưởng cho những chuyến đi du lịch ngắn ngày hoặc cuối tuần.</p>
+            <div align="center">
+                <img  width="800px"height=500px src="VHL3.jpg"alt="Ảnh nhỏ 1" class="side-image">
+            </div>
+        </div>
+    </div>
+    <div >
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Thời điểm thích hợp để vui chơi.</p>
+        </div> 
+    </div>
+        <div  style="padding-left: 50px;line-height: 1.75;padding-right: 50px;"align="left"pa>
+            <p>Để chuyến du lịch Hạ Long thêm phần trọn vẹn, bạn nên lựa chọn thời điểm từ tháng 3 – tháng 5 và từ tháng 8 – tháng 10. Đây là hai khoảng thời gian có thời tiết hài hòa trong năm và không phải mùa du lịch cao điểm.
+            <br>
+            Tháng 3 – tháng 5: Đây là thời điểm có thời tiết dễ chịu, ít mưa, lượng khách không quá đông đúc. Bạn có thể tham gia nhiều hoạt động vui chơi hơn như đi thuyền, chèo kayak và tắm biển. Thông thường, 3 tháng này ít có các cơn bão đổ bộ vào Vịnh nên sẽ an toàn hơn cho cả bạn và gia đình, người thân, bạn bè.<br>
+            Tháng 8 – tháng 10: Đây là thời gian đầu thu, chớm đông nên không khí tại Vịnh khá mát mẻ, trong lành. Cảnh sắc Hạ Long vào mùa này rất thơ mộng, thích hợp cho các hoạt động nghỉ dưỡng. Ngoài ra, giá vé khách sạn, dịch vụ cũng không quá đắt đỏ như mùa cao điểm là một điểm cộng lớn.</p>
+            <div align="center">
+                <img  width="800px"height=500px src="VHL4.jpg"alt="Ảnh nhỏ 1" class="side-image">
+            </div>
+            <p>Tuy nhiên, không phải ai cũng sắp xếp được lịch đến tham quan Vịnh Hạ Long vào khoảng thời gian trên. Vì vậy, nếu đi trong thời gian này, bạn nên đặt tour của các công ty du lịch uy tín để có được lịch trình hợp lý và hạn chế rủi ro về thời tiết.</p>
+        </div>
+   </div>
+   </div>
+   <div style="padding-top: 40px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Hoạt động thăm quan</p>
+        </div> </div>
+        <div align="left"style="padding-left: 50px;line-height: 1.75;padding-right: 50px;">
+            <p>Vịnh Hạ Long không chỉ nổi tiếng với cảnh sắc thiên nhiên hùng vĩ mà còn có vô số hoạt động hấp dẫn dành cho du khách. Lưu ngay những gợi ý dưới đây để chuyến hành trình của bạn thêm thú vị và sống động.</p>
+        </div>
+    </div>
+   <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Chiêm ngưỡng vẻ đẹp của Vịnh Hạ Long</p>
+        </div> </div>
+        <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+            <p>Được mệnh danh là kỳ quan thiên nhiên thế giới, Vịnh sở hữu hàng nghìn hòn đảo lớn nhỏ khác nhau với hình thù độc đáo. Vì vậy, hãy thử một lần trải nghiệm du thuyền trên biển và ngắm nhìn khung cảnh ngoạn mục với trời trong, biển xanh và những đảo đá sừng sững dưới mặt nước.
+                </p>
+                <div align="center">
+                <img  width="800px"height=500px src="VHL5.jpg"><br></div>
+            <p>Ngoài ra, bạn nên tham quan cả ở vùng lõi của Vịnh, Vịnh Bái Tử Long và Vịnh Lan Hạ vì đây là khu vực tập trung nhiều các đảo đá đẹp hút mắt. Mỗi hòn đảo đều có màu sắc, hình dáng khác nhau và tên gọi đặc biệt như đảo Đầu Người, hòn Trống Mái, hòn Ông Sư, núi Bài Thơ, đảo Khỉ…</p>
+         </div>  
+        </div>
+        <div style="padding-top: 50px;">
+            <div class="welcome-text">
+                <div style="text-align: center; border-bottom: 2px solid green;">
+                    <p>Khám phá các hang động độc đáo</p>
+                </div> </div>
+                <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Sau khi khám phá “bề nổi” tại Hạ Long, bạn hãy đi sâu thăm thú cả những hang động vô cùng huyền bí, có 1-0-2 tại vùng thiên nhiên kỳ vĩ này. Một số hang động nổi tiếng bạn nên tham quan thử một lần là hang Sửng Sốt, động Thiên Cung, hang Đầu Gỗ,… Mỗi hang động mang một vẻ đẹp riêng, với những khối thạch nhũ lộng lẫy được thiên nhiên kiến tạo qua hàng triệu năm.
+                        </p>
+                        <div align="center">
+                        <img  width="800px"height=500px src="VHL6.jpg"><br></div>
+                 </div>  
+        </div>
+        <div style="padding-top: 50px;">
+            <div class="welcome-text">
+                <div style="text-align: center; border-bottom: 2px solid green;">
+                    <p>Chèo thuyền Kayak ở Hang Luồn</p>
+                </div> </div>
+                <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Chèo thuyền kayak là một trong những hoạt động hấp dẫn nhất khi đến Hang Luồn, đặc biệt dành cho những ai yêu thích khám phá thiên nhiên hoang sơ và hùng vĩ. Hiện nay, khu vực bến phà gần hang đã chính thức khai thác dịch vụ chèo kayak, mang đến cơ hội trải nghiệm tuyệt vời cho du khách đam mê khám phá hang động và biển cả.
+                        </p>
+                        <div align="center">
+                        <img  width="800px"height=500px src="VHL7.jpg"><br></div>
+                 </div>
+                  
+                 <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Xuyên suốt hành trình, bạn sẽ có cơ hội hít thở bầu không khí trong lành, chạm tay xuống làn nước biển trong xanh và ngắm nhìn khung cảnh hùng vĩ mà tạo hóa đã ban cho nơi đây. Đặc biệt, khi chèo vào sâu trong hang, bạn còn có thể vươn tay chạm vào những nhũ đá lấp lánh rủ xuống từ trần hang, tựa như một tấm màn pha lê huyền ảo.
+                    </p>
+                </div>
+        </div>
+        <div style="padding-top: 50px;">
+            <div class="welcome-text">
+                <div style="text-align: center; border-bottom: 2px solid green;">
+                    <p>Khám phá đảo Mắt Rồng</p>
+                </div> </div>
+                <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Đảo Mắt Rồng là một hòn đảo xinh đẹp nằm xa ngoài khơi Hạ Long – một điểm đến yêu thích của nhiều du khách khi đặt chân tới đây. Đảo Mắt Rồng mang vẻ đẹp tự nhiên với những cánh rừng nguyên sinh rộng lớn, cùng hệ thống động – thực vật đa dạng, ắt hẳn sẽ mang đến cho bạn chuyến hành trình khó quên.
+                        </p>
+                        <div align="center">
+                        <img  width="800px"height=500px src="VHL8.jpg"><br></div>
+                 </div>
+                  
+                 <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Tại đảo, bạn có thể tổ chức nhiều hoạt động lý thú như cắm trại, teambuilding, chèo thuyền kayak, đi xuồng bay và cả tắm biển. Đặc biệt, bạn sẽ có cơ hội chụp được nhiều tấm ảnh lung linh để làm kỷ niệm.
+                    </p>
+                </div>
+        </div>
+        <div style="padding-top: 50px;">
+            <div class="welcome-text">
+                <div style="text-align: center; border-bottom: 2px solid green;">
+                    <p>Check-in với biểu tượng du lịch Hạ Long – Hòn Trống Mái</p>
+                </div> </div>
+                <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Hòn Trống Mái không chỉ là một kiệt tác thiên nhiên mà còn là biểu tượng du lịch của Vịnh, xuất hiện trên nhiều bức ảnh, bưu thiếp và cả tờ tiền Việt Nam. Khung cảnh xung quanh Hòn Trống Mái cực kỳ ấn tượng với mặt nước xanh biếc và những dãy núi đá vôi hùng vĩ, tạo nên background hoàn hảo cho mọi bức ảnh check-in.
+                        </p>
+                        <div align="center">
+                        <img  width="800px"height=500px src="VHL9.jpg"><br></div>
+                 </div>
+                  
+                 <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Hòn Trống Mái nằm ở phía Tây Nam của Vịnh Hạ Long, cách cảng tàu khoảng 5km. Để đến đây, bạn có thể:<br>
+                        Thuê du thuyền hoặc tàu tham quan Vịnh: Đây là cách phổ biến nhất vì Hòn Trống Mái nằm trong tuyến tham quan số 1 và số 2 của Vịnh Hạ Long.<br>
+                        Đi tàu riêng: Nếu bạn đi theo nhóm hoặc muốn có không gian riêng tư, có thể thuê tàu riêng để di chuyển theo lịch trình mong muốn.
+                    </p>
+                </div>
+        </div>
+        <div style="padding-top: 50px;">
+            <div class="welcome-text">
+                <div style="text-align: center; border-bottom: 2px solid green;">
+                    <p>Tắm biển ở đảo Ti Tốp</p>
+                </div> </div>
+                <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Bãi biển của đảo Ti Tốp có hình dáng như một vầng trăng lưỡi liềm, với cát trắng mịn và làn nước trong xanh, không quá sâu, rất lý tưởng để tắm biển và thư giãn. Nước biển ở đây khá ấm, sạch sẽ và sóng vừa phải, thích hợp cho cả người lớn và trẻ em.<br>
+                        Ngoài hoạt động tắm biển, bạn cũng có thể:<br>
+                        Chèo thuyền kayak: Thuê thuyền kayak để dạo quanh đảo, khám phá vẻ đẹp hoang sơ của khu vực này.<br>
+                        Chụp ảnh sống ảo: Vẻ đẹp của đảo Ti Tốp cùng với bãi biển là phông nền lý tưởng cho những bức ảnh tuyệt vời của bạn.<br>
+                        </p>
+                        <div align="center">
+                        <img  width="800px"height=500px src="VHL10.jpg"><br></div>
+                 </div>
+                  
+                 
+        </div>
+</body>
+</html>

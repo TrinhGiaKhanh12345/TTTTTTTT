@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đánh giá & Phản hồi khách hàng</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #e5f9ff;
+        }
+
+        .feedback-container {
+            max-width: 700px;
+            margin: 60px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #166534;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: -12px;
+            margin-bottom: 12px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #166534;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0c4b27;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="feedback-container">
+        <h2>Gửi đánh giá & phản hồi của bạn</h2>
+        <form id="feedbackForm">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" placeholder="Nguyễn Văn A">
+            <div class="error" id="nameErr"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="email@domain.com">
+            <div class="error" id="emailErr"></div>
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" placeholder="0901234567">
+            <div class="error" id="phoneErr"></div>
+
+            <label for="feedback">Phản hồi:</label>
+            <textarea id="feedback" rows="4" placeholder="Viết cảm nhận hoặc góp ý tại đây..."></textarea>
+            <div class="error" id="feedbackErr"></div>
+
+            <button type="button" onclick="submitFeedback()">Gửi đánh giá</button>
+        </form>
+    </div>
+
+    <script>
+        function submitFeedback() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let feedback = document.getElementById("feedback").value.trim();
+
+            let nameErr = document.getElementById("nameErr");
+            let emailErr = document.getElementById("emailErr");
+            let phoneErr = document.getElementById("phoneErr");
+            let feedbackErr = document.getElementById("feedbackErr");
+
+            let ok = true;
+
+            // Kiểm tra họ tên
+            if (name === "" || /[^a-zA-Z\sÀ-ỹ]/.test(name)) {
+                nameErr.textContent = "Vui lòng nhập đúng họ tên.";
+                ok = false;
+            } else nameErr.textContent = "";
+
+            // Kiểm tra email
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                emailErr.textContent = "Email không hợp lệ.";
+                ok = false;
+            } else emailErr.textContent = "";
+
+            // Kiểm tra số điện thoại
+            if (!/^0\d{9}$/.test(phone)) {
+                phoneErr.textContent = "SĐT phải bắt đầu bằng 0 và có 10 chữ số.";
+                ok = false;
+            } else phoneErr.textContent = "";
+
+            // Kiểm tra phản hồi
+            if (feedback === "") {
+                feedbackErr.textContent = "Vui lòng nhập nội dung phản hồi.";
+                ok = false;
+            } else feedbackErr.textContent = "";
+
+            if (ok) {
+                alert("Cảm ơn bạn đã gửi đánh giá!");
+                document.getElementById("feedbackForm").reset();
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Liên hệ</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: rgb(217, 238, 240);
+        }
+
+        .contact {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact h2 {
+            text-align: center;
+            color: #166534;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #166534;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background-color: #0c4b27;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact">
+        <h2>Liên hệ với chúng tôi</h2>
+        <form id="contactForm">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name">
+            <div class="error" id="nameErr"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <div class="error" id="emailErr"></div>
+
+            <label for="phone">Điện thoại:</label>
+            <input type="tel" id="phone">
+            <div class="error" id="phoneErr"></div>
+
+            <button type="button" onclick="checkContactForm()">Gửi thông tin</button>
+        </form>
+    </div>
+
+    <script>
+        function checkContactForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+
+            let ok = true;
+
+            if (name === "" || /[^a-zA-Z\sÀ-ỹ]/.test(name)) {
+                document.getElementById("nameErr").textContent = "Nhập đúng họ tên.";
+                ok = false;
+            } else document.getElementById("nameErr").textContent = "";
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById("emailErr").textContent = "Email không hợp lệ.";
+                ok = false;
+            } else document.getElementById("emailErr").textContent = "";
+
+            if (!/^0\d{9}$/.test(phone)) {
+                document.getElementById("phoneErr").textContent = "SĐT phải bắt đầu bằng 0 và có 10 chữ số.";
+                ok = false;
+            } else document.getElementById("phoneErr").textContent = "";
+
+            if (ok) {
+                alert("Gửi thông tin thành công!");
+                document.getElementById("contactForm").reset();
+            } else {
+                alert("Vui lòng kiểm tra lại thông tin.");
+            }
+        }
+    </script>
+</body>
+</html>
