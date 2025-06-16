@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+        .banner-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .phan-gioi-thieu {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        .container-gioi-thieu {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .noi-dung-gioi-thieu {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .noi-dung-gioi-thieu {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        .van-ban-gioi-thieu {
+            width: 100%;
+            margin-bottom: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .van-ban-gioi-thieu {
+                width: 50%;
+                margin-bottom: 0;
+                padding-right: 2rem;
+            }
+        }
+        .tieu-de-gioi-thieu {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color:black;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            
+        }
+        @media (min-width: 768px) {
+            .tieu-de-gioi-thieu {
+                font-size: 3rem;
+            }
+        }
+        .mo-ta-gioi-thieu {
+            font-size: 1.125rem;
+            color: #4b55634b5563;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .nut-gioi-thieu {
+            display: flex;
+            gap: 1rem;
+        }
+        .nut-chinh {
+            background-color: #991b1b;
+            color: white ;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .nut-chinh:hover {
+            background-color: #7f1d1d;
+        }
+        .nut-phu {
+            border: 1px solid #d1d5db;
+            color: #374151;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            background: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .nut-phu:hover {
+            background-color: #f3f4f6;
+        }
+        .welcome-containerrr {
+            background-color: white;
+            color: black;
+            overflow: hidden; /* Ẩn phần chữ chạy ra ngoài */
+            padding: 20px 0; /* Giảm padding dọc */
+        }
+        .welcome-texttt {
+            white-space: nowrap; /* Ngăn chữ xuống dòng */
+            font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+            font-weight: 500;
+            padding-left: 0%; /* Đẩy chữ ra ngoài bên phải ban đầu */
+            animation: marquee 12s linear infinite; /* Tạo hiệu ứng chạy */
+            letter-spacing: 20px;/*chạy chữ */
+           font-family: initial;
+        }
+        .welcome-text {
+            width: fit-content;
+            margin: auto;
+            background-image:linear-gradient(lightblue,green );
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #166534;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho văn bản chào mừng */
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:black;
+            max-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            border: 1px ;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 20px 26px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            margin-top: 20px;
+        }
+        .dropdown-content a:hover {
+            background: white;
+            color: rgb(232, 63, 63);
+            border-bottom: 2px solid black;
+        }
+        .dropdown:hover .dropdown-content {display: block;}
+        .navbar-blue {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-blue a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-blue a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .hidden-md-flex-items-center-space-x-8 a:hover{
+            color: lightblue
+        }
+
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="navbar-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <span class="text-xl font-bold"><img  width="300" align="center" src="./HL/logo7.jpg">  </span>
+
+                <div style="font-family: initial;" class="hidden-md-flex-items-center-space-x-8">
+                    <a href="#">TRANG CHỦ </a>
+                    <a href="#">HẠ LONG </a>
+                    <div class="dropdown">
+                        <a href="#">ĐỊA ĐIỂM</a>
+                        <div style="font-family: initial;" class="dropdown-content">
+                            <a href="#">CÔNG VIÊN </a>
+                            <a href="#">HANG ĐÁ  </a>
+                            <a href="#">BIỂN ĐẢO  </a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">TIN TỨC</a>
+                        <div class="dropdown-content">
+                            <a href="#"> NHÂN DÂN</a>
+                            <a href="#"> LAO ĐỘNG  </a>
+                            <a href="#">CHÍNH TRỊ </a>
+                        </div>
+                    </div>
+                    <a href="#">LIÊN HỆ </a>
+                </div>
+                <button class="md:hidden text-gray-500">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="welcome-containerrr">
+        <p class="welcome-texttt">CHÀO MỪNG ĐẾN VỚI DI SẢN THIÊN NHIÊN THẾ GIỚI</p>
+    </section>
+    <section class="banner-video">
+        <video autoplay muted loop >
+            <source src="./HL/HaLong.mp4" type="">
+        </video>
+    </section>
+
+    <section class="phan-gioi-thieu">
+        <div class="container-gioi-thieu">
+            <div class="noi-dung-gioi-thieu">
+                <div class="van-ban-gioi-thieu">
+                    <h1 class="tieu-de-gioi-thieu">Cuộc phiêu lưu Hạ Long đang chờ bạn</h1>
+                    <p class="mo-ta-gioi-thieu">Khám phá Hạ Long ngoạn mục tìm hiểu nền văn hóa sôi động và bắt đầu những cuộc phiêu lưu khó quên với các tưa du lịch có hướng dẫn viên</p>
+                    <div class="nut-gioi-thieu">
+                        <button class="nut-chinh">Khám phá hạ long ngay</button>
+                        <button class="nut-phu">Liên hệ </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="lichsulichsu">
+        <section >
+            <div class="welcome-text" style="background-color: #dcfce7; color: #166534; width: fit-content; margin: 20px auto; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center;  border-bottom: 2px solid green;">
+                    Cẩm nang du lịch Hạ Long
+                </div>
+        </section>
+        <h1 align="center" style="font-size: 50px;"><b>Lịch sử Hạ Long</b> </h1>
+        <p align="center" style="font-family: initial;">Hạ Long, với vẻ đẹp kỳ vĩ và tráng lệ, là một trong những thắng cảnh nổi tiếng không chỉ trong nước mà còn trên thế giới. Được hình thành qua hàng triệu năm, nơi đây là minh chứng sống động cho sự biến đổi của vỏ trái đất, với các quá trình kiến tạo địa chất phức tạp, đặc biệt là trong các kỷ Ordovic và Neogen. Những dãy núi đá vôi trùng điệp, nhấp nhô trên mặt biển, tạo nên một bức tranh thiên nhiên tuyệt mỹ, làm say lòng bao du khách khi đặt chân đến đây.
+
+            Hạ Long không chỉ thu hút với vẻ đẹp tự nhiên, mà còn chứa đựng dấu ấn lịch sử văn hóa sâu sắc. Các di tích khảo cổ học cho thấy rằng khu vực này đã là nơi cư trú của con người từ thời tiền sử. Những nền văn hóa cổ như Soi Nhụ và Cái Bèo đã để lại những dấu vết quan trọng về cuộc sống của tổ tiên ta từ hàng nghìn năm trước. Những di chỉ này không chỉ phản ánh đời sống sinh hoạt, mà còn là những minh chứng về sự phát triển của nền văn minh sông Hồng từ rất lâu.
+
+            Trong suốt chiều dài lịch sử, Hạ Long còn gắn liền với những chiến công oai hùng của dân tộc. Đây là nơi đã diễn ra nhiều trận thủy chiến quan trọng, đặc biệt là trong thời kỳ kháng chiến chống ngoại xâm. Mỗi mảnh đất, mỗi dòng nước tại đây đều mang trong mình những câu chuyện lịch sử hào hùng, từ những cuộc chiến đấu bảo vệ tổ quốc đến những chiến thắng vẻ vang, góp phần viết nên những trang sử vàng của dân tộc.
+
+            Ngày nay, Hạ Long không chỉ là một kỳ quan thiên nhiên được UNESCO công nhận là Di sản Thiên nhiên Thế giới, mà còn là biểu tượng của văn hóa và lịch sử của đất nước Việt Nam. Hạ Long là điểm đến thu hút hàng triệu du khách từ khắp nơi trên thế giới. Du khách đến đây không chỉ để chiêm ngưỡng vẻ đẹp tuyệt vời của những hòn đảo đá vôi nổi bật giữa làn nước xanh biếc, mà còn để khám phá những giá trị lịch sử, văn hóa độc đáo. Các lễ hội truyền thống, các di tích lịch sử và những câu chuyện dân gian xung quanh Hạ Long vẫn tiếp tục là nguồn cảm hứng cho nhiều thế hệ, giữ vững giá trị cội nguồn và truyền thống văn hóa dân tộc.Hạ Long, qua bao thế kỷ, vẫn luôn là một điểm sáng trên bản đồ du lịch thế giới, không chỉ bởi cảnh quan thiên nhiên tươi đẹp mà còn bởi sự hòa quyện giữa giá trị lịch sử, văn hóa và thiên nhiên. Mỗi chuyến thăm đến Hạ Long đều mang lại cho du khách một trải nghiệm đầy ấn tượng và khó quên.
+        </p>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <section >
+                    <div class="welcome-text" style="background-color: #dcfce7; color: #166534; width: fit-content; margin: 20px auto; padding: 10px 20px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                        <div style="text-align: center; background-color:; border-bottom: 2px solid green; width: fit-content;
+    margin: auto;">
+                            Hạ Long mùa nào cũng đẹp
+                        </div>
+                </section>
+                    <p style="color: #166534;" class="text-lg text-gray-600 max-w-2xl mx-auto ">The journey to the magical Ha Long.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <img src="./HL/1.jpg" alt="">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3"> Đắm mình trong không gian thiên nhiên Hạ Long</h3>
+                        <p class="text-gray-600">Hạ Long, với hai mùa sắc, mang đến những trải nghiệm du lịch đa dạng. Mùa hè rực rỡ (tháng 5-10) là thời điểm lý tưởng cho các hoạt động biển sôi động. Mùa đông yên bình (tháng 11-4) lại quyến rũ du khách bởi vẻ đẹp trầm mặc và không gian tĩnh tĩnh.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <img src="./HL/2.jpg" alt="">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Vẻ đẹp rựa rỡ trong mùa hè sôi động </h3>
+                        <p class="text-gray-600">Mùa hè ở Hạ Long là con đường thiên đường của những trải nghiệm sôi động. Nắng vàng rực rỡ xuống làn nước biển xanh biếc, tạo nên khung cảnh tuyệt đẹp. Đây là thời điểm lý tưởng để bạn đắm mình trong suối nước mát lạnh, tham gia các trò chơi thể thao dưới nước sôi động, chèo thuyền kayak khám phá những hang động kỳ vĩ và thưởng thức hải sản tươi ngon. Không khí nóng nhiệt của mùa du lịch cao điểm sẽ mang đến cho bạn những trải nghiệm khó quên, những kỷ niệm mùa hè rực rỡ bên bờ biển..</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <img src="./HL/3.jpg" alt="">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Vẻ đẹp lặng lẽ, huyền bí và lạnh giá thật ấn tượng trong mùa đông.</h3>
+                        <p class="text-gray-600">Khi mùa đông đến, từ tháng 11 đến tháng 4, Hạ Long trở về yên bình và tĩnh lặng hơn. Tiết trời se lạnh mang đến cho biển một vẻ đẹp trầm mặc, lãng mạn. Đây là thời điểm lý tưởng để bạn du ngoạn vịnh cảnh, khám phá những hang động kỳ vĩ, tham quan các làng chài truyền thống và thưởng thức ẩm thực địa phương. Không gian tĩnh và ấm cúng sẽ mang đến cho bạn những giây phút thư giãn và tận hưởng vẻ đẹp của Hạ Long.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+                        <section class="py-20 bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to get started?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Add your call-to-action text here to encourage visitors to take the next step.</p>
+            <button class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Get Started Now</button>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Your Brand</h3>
+                    <p class="text-gray-400">A short description about your company or product.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a hregray-400 hover:text-white">Terms of Service</a></li>f="#" class="text-
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>

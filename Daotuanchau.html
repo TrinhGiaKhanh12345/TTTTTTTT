@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lien he </title>
+    <style>
+        
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #e3f9ff;
+        }
+        .banner-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .phan-gioi-thieu {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.container-gioi-thieu {
+    width: 80%;
+}
+
+.noi-dung-gioi-thieu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Mặc định xếp dọc trên mobile */
+}
+
+/* Khi màn hình lớn hơn 768px thì xếp ngang */
+@media (min-width: 768px) {
+    .noi-dung-gioi-thieu {
+        flex-direction: row;
+    }
+}
+        .welcome-containerrr {
+            background-color: white;
+            color: black;
+            overflow: hidden; /* Ẩn phần chữ chạy ra ngoài */
+            padding: 20px 0; /* Giảm padding dọc */
+        }
+        .welcome-texttt {
+            white-space: nowrap; /* Ngăn chữ xuống dòng */
+            font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+            font-weight: 500;
+            padding-left: 0%; /* Đẩy chữ ra ngoài bên phải ban đầu */
+            animation: marquee 12s linear infinite; /* Tạo hiệu ứng chạy */
+            letter-spacing: 20px;/*chạy chữ */
+           font-family: initial;
+        }
+        .welcome-text {
+            width: fit-content;
+            margin: auto;
+            background-image:linear-gradient(lightblue,green );
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #166534;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho văn bản chào mừng */
+            background: linear-gradient(135deg, #b6f4d3 16% 0%, #5186f0 33%, #b6f4d3 66%, #0a0af4 100%);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:black;
+            max-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            border: 1px ;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 20px 26px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            margin-top: 20px;
+        }
+        .dropdown-content a:hover {
+            background: white;
+            color: rgb(232, 63, 63);
+            border-bottom: 2px solid black;
+        }
+        .dropdown:hover .dropdown-content {display: block;}
+        .navbar-blue {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           
+        }
+        .navbar-blue a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-blue a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .hidden-md-flex-items-center-space-x-8 a:hover{
+            color: lightblue
+        }
+        .noidung{
+            padding-left: 70px;
+            padding-right: 70px;
+           padding-bottom: 50px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Giới hạn kích thước */
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;  /* Tăng chiều rộng */
+            height: 500px; /* Tăng chiều cao */
+            object-fit: cover; /* Giữ tỷ lệ, tránh méo ảnh */
+            display: block;
+            border-radius: 10px; /* Bo góc ảnh */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 0, 0, 0.5); /* Làm tối ảnh */
+            border-radius: 10px;
+        }
+
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+    
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        .offer {
+            background-color: #ff5c5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .contact {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #14a2e8;
+            border: 1px solid #bce8f1;
+            border-radius: 5px;
+        }
+        .contact input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 20px);
+        }
+        .sss{
+            background-color: #14a2e8;
+            padding-top: 10px;
+            padding-left: 50px;
+            height:  200px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <body class="bg-gray-50">
+            <nav class="navbar-blue">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <span class="text-xl font-bold"><img  width="300" align="center" src="logo7.jpg">  </span>
+                </div>
+            </nav>
+            <section class="welcome-containerrr">
+                <p class="welcome-texttt">CHÀO MỪNG ĐẾN VỚI DI SẢN THIÊN NHIÊN THẾ GIỚI</p>
+            </section>
+    </header>
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 1px solid green;">
+            <p>Đảo Tuần Châu</p>
+        </div>
+    </div>
+        <div style="padding-left:40px ;line-height: 1.75;padding-right: 50px;"align="left" >
+            <p >Nằm cách trung tâm thành phố Hạ Long chỉ 2km, đảo Tuần Châu nổi tiếng như một “viên ngọc bích” giữa lòng vịnh Hạ Long thơ mộng. Với diện tích rộng lớn lên đến 400ha, nơi đây sở hữu bờ biển thoai thoải cùng lớp cát trắng mịn, tạo nên khung cảnh thiên nhiên vô cùng đẹp mắt.<br>
+                Đảo Tuần Châu được đánh giá là điểm du lịch trọng điểm của Hạ Long, thu hút đông đảo du khách trong và ngoài nước. Nhờ hệ thống giao thông thuận lợi cả đường thủy lẫn đường bộ, việc di chuyển đến đảo vô cùng dễ dàng.
+            </p>
+            <div align="center">
+                <img  width="800px"height=500px src="TC1.jpg"alt="Ảnh nhỏ 1" class="side-image">
+            </div>
+            <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                Đặc biệt, con đường dài 2km nối liền đảo và đất liền được xem là điểm nhấn ấn tượng, mang đến cho du khách cảm giác choáng ngợp trước sự hùng vĩ của cảnh quan thiên nhiên nơi đây. Du khách đến với Tuần Châu không chỉ được tận hưởng bầu không khí trong lành, hòa mình vào thiên nhiên tươi đẹp mà còn có cơ hội tham gia vào vô số hoạt động vui chơi giải trí hấp dẫn trên biển.
+            </div>
+        </div>
+    </div>
+    <div >
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Thời điểm lý tưởng để ghé thăm đảo Tuần Châu</p>
+        </div> 
+    </div>
+        <div  style="padding-left: 50px;line-height: 1.75;padding-right: 50px;"align="left"pa>
+            <p>Nổi tiếng là điểm du lịch biển tuyệt đẹp, đảo Tuần Châu luôn chào đón du khách với khung cảnh thiên nhiên thơ mộng, hữu tình. Thời điểm lý tưởng nhất để khám phá “thiên đường” này chính là mùa hè, từ tháng 3 đến tháng 10. Lúc này, bầu trời trong xanh, nước biển xanh mát, bờ cát trắng trải dài cùng ánh nắng vàng rực rỡ tạo nên bức tranh thiên nhiên vô cùng ấn tượng.
+            </p>
+            <div align="center">
+            <img width="800px"height=500px src="TC2.jpg"><br></div>
+            <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+            <p>Tuy nhiên, bạn cũng cần lưu ý rằng từ tháng 5 đến tháng 7, nhiệt độ tại đây có thể lên đến 40 độ C. Do vậy, nếu bạn có sức khỏe yếu hoặc đi du lịch cùng trẻ nhỏ và người lớn tuổi, hãy cân nhắc kỹ lưỡng và chuẩn bị đầy đủ các vật dụng cần thiết để tránh nắng nóng </p></div>
+        </div>
+   </div>
+   </div>
+   <div style="padding-top: 40px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Địa điểm thăm quan</p>
+        </div> </div>
+        <div align="left"style="padding-left: 50px;line-height: 1.75;padding-right: 50px;">
+            <b>Khu vui chơi giải trí Tuần Châu Park</b>
+            <p >Khu vui chơi giải trí Quốc tế Tuần Châu tọa lạc tại Ngọc Châu, Tuần Châu, Hạ Long, Quảng Ninh, là điểm đến lý tưởng cho du khách với nhiều hoạt động hấp dẫn. Nơi đây mở cửa từ 8 giờ sáng đến 10 giờ tối, thu hút du khách bởi Câu lạc bộ biểu diễn cá heo, hải cẩu, sư tử biển và công viên 12 trò cảm giác mạnh.<br>
+                Ngoài ra, du khách còn có thể thưởng thức các chương trình trình diễn nhạc nước, xiếc… được tổ chức theo khung giờ cố định. Khu vui chơi giải trí Quốc tế Tuần Châu hứa hẹn mang đến cho du khách những trải nghiệm vui chơi giải trí tuyệt vời.</p>
+            
+            <img width="800px"height=500px src="TC3.jpg"><br></div>
+        </div>
+   </div>
+   <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Bãi biển Tuần Châu</p>
+        </div> </div>
+        <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+            <p>Nằm trên đảo Tuần Châu xinh đẹp, bãi biển Tuần Châu luôn là điểm đến thu hút đông đảo du khách mỗi khi đến với Hạ Long. Nơi đây sở hữu bờ cát trắng mịn trải dài, nước biển trong xanh và không khí trong lành, mát mẻ. Bãi biển Tuần Châu mở cửa 24/24h, du khách có thể thoải mái đến đây tắm biển và vui chơi bất cứ lúc nào. Giá vé vào cửa là miễn phí, đây là một điểm cộng lớn cho du khách khi đến đây.
+                </p><br>
+                <div align="center">
+                <img  width="800px"height=500px src="TC4.jpg"><br></div>
+                <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                    <p>Tận hưởng cảm giác đắm mình trong làn nước biển trong xanh, mát lạnh, hòa mình vào thiên nhiên tươi đẹp sẽ giúp bạn xua tan đi mọi căng thẳng, mệt mỏi. Du khách có thể tham gia các hoạt động vui chơi giải trí trên biển như tắm biển, chơi các trò chơi thể thao dưới nước, tham gia các tour du lịch tham quan vịnh Hạ Long, hay đơn giản là nằm dài trên bờ cát, tận hưởng ánh nắng ấm áp và ngắm nhìn cảnh biển thơ mộng.</p></div>
+         </div>  
+    </div>
+    
+</div>
+</body>
+</html>
