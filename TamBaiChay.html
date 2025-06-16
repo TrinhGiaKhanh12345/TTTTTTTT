@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lien he </title>
+    <style>
+        
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #e3f9ff;
+        }
+        .banner-video {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .phan-gioi-thieu {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.container-gioi-thieu {
+    width: 80%;
+}
+
+.noi-dung-gioi-thieu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Mặc định xếp dọc trên mobile */
+}
+
+/* Khi màn hình lớn hơn 768px thì xếp ngang */
+@media (min-width: 768px) {
+    .noi-dung-gioi-thieu {
+        flex-direction: row;
+    }
+}
+        .welcome-containerrr {
+            background-color: white;
+            color: black;
+            overflow: hidden; /* Ẩn phần chữ chạy ra ngoài */
+            padding: 20px 0; /* Giảm padding dọc */
+        }
+        .welcome-texttt {
+            white-space: nowrap; /* Ngăn chữ xuống dòng */
+            font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+            font-weight: 500;
+            padding-left: 0%; /* Đẩy chữ ra ngoài bên phải ban đầu */
+            animation: marquee 12s linear infinite; /* Tạo hiệu ứng chạy */
+            letter-spacing: 20px;/*chạy chữ */
+           font-family: initial;
+        }
+        .welcome-text {
+            width: fit-content;
+            margin: auto;
+            background-image:linear-gradient(lightblue,green );
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: #166534;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho văn bản chào mừng */
+            background: linear-gradient(135deg, #b6f4d3 16% 0%, #5186f0 33%, #b6f4d3 66%, #0a0af4 100%);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color:black;
+            max-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            border: 1px ;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 20px 26px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            margin-top: 20px;
+        }
+        .dropdown-content a:hover {
+            background: white;
+            color: rgb(232, 63, 63);
+            border-bottom: 2px solid black;
+        }
+        .dropdown:hover .dropdown-content {display: block;}
+        .navbar-blue {
+            background-color: black;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           
+        }
+        .navbar-blue a {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-blue a:hover {
+            background-color: rgb(0, 0, 0);
+        }
+        .hidden-md-flex-items-center-space-x-8 a:hover{
+            color: lightblue
+        }
+        .noidung{
+            padding-left: 70px;
+            padding-right: 70px;
+           padding-bottom: 50px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Giới hạn kích thước */
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;  /* Tăng chiều rộng */
+            height: 500px; /* Tăng chiều cao */
+            object-fit: cover; /* Giữ tỷ lệ, tránh méo ảnh */
+            display: block;
+            border-radius: 10px; /* Bo góc ảnh */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 0, 0, 0.5); /* Làm tối ảnh */
+            border-radius: 10px;
+        }
+
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+    
+        .content {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 2;
+            width: 80%;
+            
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        .offer {
+            background-color: #ff5c5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .contact {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #14a2e8;
+            border: 1px solid #bce8f1;
+            border-radius: 5px;
+        }
+        .contact input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 20px);
+        }
+        .sss{
+            background-color: #14a2e8;
+            padding-top: 10px;
+            padding-left: 50px;
+            height:  200px;
+           
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <body class="bg-gray-50">
+            <nav class="navbar-blue">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16 items-center">
+                        <span class="text-xl font-bold"><img  width="300" align="center" src="logo7.jpg">  </span>
+                </div>
+            </nav>
+            <section class="welcome-containerrr">
+                <p class="welcome-texttt">CHÀO MỪNG ĐẾN VỚI DI SẢN THIÊN NHIÊN THẾ GIỚI</p>
+            </section>
+    </header>
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 1px solid green;">
+            <p>Vẻ đẹp của bãi tắm Bãi cháy </p>
+        </div>
+    </div>
+        <div style="padding-left:40px ;line-height: 1.75;padding-right: 50px;"align="left" >
+            <p >Bãi tắm Bãi Cháy là bãi tắm nhân tạo rộng và dài nhất Hạ Long, với chiều dài khoảng hơn 500m, rộng 100m, bãi cát trắng mịn, nước biển trong xanh. Nằm ngay trong khu du lịch Bãi Cháy, sát cạnh các khách sạn, nhà hàng, trung tâm giải trí và bến tàu du lịch.</p>
+            <div align="center">
+                <img  width="800px"height=500px src="BC1.jpg"alt="Ảnh nhỏ 1" class="side-image">
+            <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                <p>Bãi tắm Bãi Cháy Hạ Long nổi tiếng vì có địa hình đẹp như tranh họa đồ với dải đồi thấp chạy thoai thoải hướng về phía biển ôm trọn hàng thông cổ thụ hơn 2km. </p></div>
+         </div> 
+         <div align="center">
+            <img  width="800px"height=500px src="BC3.jpg"><br></div>
+        </div>
+         <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+            <p>Bãi Cháy thu hút nhiều du khách vì nó có bãi cát trắng mịn, nước biển trong xanh, dù là bãi tắm nhân tạo nhưng được thiết kế và cải tạo rất hài hòa với thiên nhiên, tạo cảm giác như một bãi biển tự nhiên thực thụ. Bãi Cháy cũng là nơi lý tưởng để ngắm hoàng hôn trên vịnh Hạ Long. Khi mặt trời lặn, mặt nước phản chiếu ánh sáng vàng rực tạo nên khung cảnh cực kỳ lãng mạn vì thế nhiều du khách chọn nơi đây để đi dạo, chụp ảnh, ngắm biển mỗi buổi chiều.
+            </p>
+        </div>
+         
+    </div>
+    <div >
+    <div style="padding-top: 50px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Thời điểm thích hợp để vui chơi.</p>
+        </div> 
+    </div>
+        <div  style="padding-left: 50px;line-height: 1.75;padding-right: 50px;"align="left"pa>
+            <p>Vì là bãi biển nhân tạo nên thời tiết ở Bãi Cháy cũng giống như thời tiết chung của cả tỉnh Quảng Ninh. Bạn có thể du lịch Bãi Cháy ở bất cứ khi nào trong năm. Tuy nhiên, thời điểm thích hợp nhất để đi Bãi Cháy là từ tháng 4 – tháng 9. Khoảng thời gian này trời nắng nhẹ, bãi cát trắng hòa cùng với biển xanh sẽ tạo nên bức tranh Bãi Cháy vô cùng tuyệt đẹp.
+            
+        </div>
+        <div align="center">
+            <img  width="800px"height=500px src="BC4.jpg"><br></div>
+        
+   </div>
+   </div>
+   <div style="padding-top: 40px;">
+    <div class="welcome-text">
+        <div style="text-align: center; border-bottom: 2px solid green;">
+            <p>Nguồn gốc tên gọi của Bãi tắm Bãi Cháy</p>
+        </div> </div>
+        <div align="left"style="padding-left: 50px;line-height: 1.75;padding-right: 50px;">
+            <p>	Gắn liền với lịch sử dân tộc: Tên gọi Bãi Cháy có nguồn gốc từ sự kiện lịch sử Việt Nam thời nhà Trần. Truyền thuyết xưa kể lại, khu vực Bãi Cháy là nơi đoàn thuyền lương của quân Nguyên Mông dưới sự cầm đầu của Trương Văn Hổ đến xâm lược nước ta. Bấy giờ chúng đã bị Trần Khánh Dư và quân dân nhà Trần thiêu cháy dạt vào bờ. Vì nhiều thuyền của giặc bị cháy dưới những cơn gió Đông Bắc thổi tạt vào bờ phía Tây Cửa Lục nên khiến khu rừng đang hanh khô cũng cháy rụi. Và khu rừng đó chính là Bãi Cháy. </p>
+        </div>
+        <div align="center">
+            <img  width="800px"height=500px src="BC2.jpg"><br></div>
+            <div align="left" style="padding-left: 40px;line-height: 1.75;padding-right: 50px;">
+                <p>Qua câu chuyện truyền thuyết: Bên cạnh nguồn gốc lịch sử thì có một truyền thuyết dân gian kể rằng lúc trước có nhiều tàu thuyền neo đậu ở bãi biển phía Tây Cửa Lục. Phần bên sườn thuyền và đáy thuyền có con hà bám vào vô cùng chắc chắn, chúng có thể ăn hỏng thuyền. Do đó, người dân chài phải lấy lá phi lao đốt xung quanh để đuổi con hà. Nhìn từ phía Hòn Gai và những nơi khác luôn thấy ở khu biển này rực lửa nên đặt tên là Bãi Cháy.</p></div>
+     </div> 
+    
+    
+</body>
+</html>
